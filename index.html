@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; padding-top: 15px; color: hsl(215, 51%, 70%); font-weight: 300;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background-color: hsl(217, 54%, 11%);
+      display: grid;
+      justify-content: center;
+      align-content: center;
+    }
+    .container {
+      margin-top: 50px;
+      background-color: hsl(216, 50%, 16%);
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      padding: 15px;
+    }
+    p {
+      font-size: 18px;
+      color: hsl(215, 51%, 70%);
+      font-weight: 300;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    h1 a {
+      font-size: 22px;
+      color: white;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+    }
+    h1 a:hover {
+      color: hsl(178, 100%, 50%);
+    }
+    .box .overlay {
+      background-color: rgba(16, 196, 196, 0.706);
+      position: absolute;
+      opacity: 0;
+      border-radius: 10px;
+      height: 300px;
+      width: 300px;
+    }
+    .box > img  {
+      border-radius: 10px;
+      background: hsl(178, 100%, 50%);
+      height: 300px;
+      width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+    .box .overlay:after {
+    content: url("images/icon-view.svg");
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .box .overlay:hover  {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    .author {
+      border-top: 1px solid hsl(215, 51%, 70%);
+      padding-top: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .author a {
+      font-weight: 300;
+      color: white;
+      text-decoration: none;
+      padding-left: 5px;
+    }
+    .author a:hover {
+      color: hsl(178, 100%, 50%);
+    }
+    .author img {
+      margin-right: 10px;
+      height: 25px;
+      border-radius: 20px;
+      border: 1px solid white;
+    }
+    .other {
+      display: flex;
+      justify-content: space-between;
+    }
+    .other img {
+      margin-right: 5px;
+    }
+    .price {
+      color: hsl(178, 100%, 50%);
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+    .days {
+      display: flex;
+      align-items: center;
+      color: hsl(215, 51%, 70%);
+      font-weight: 300;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="overlay"></div>
+      <img src="images/image-equilibrium.jpg" alt="" height="300px">
+    </div>
+    <h1><a href="#">Equilibrium #3429</a></h1>
+
+    <p>Our Equilibrium collection promotes balance and calm.</p>
+
+    <div class="other">
+      <div class="price" flood-color="178, 100%, 50%"><img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</div>
+      <div class="days"><img src="images/icon-clock.svg" alt="">3 days left</div>
+    </div>  
+    <p class="author"><img src="images/image-avatar.png" alt="" >Creation of <a href="#"> Jules Wyvern</a></p>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kateryna Zolotko</a>.
+  </div>
+</body>
+</html>
