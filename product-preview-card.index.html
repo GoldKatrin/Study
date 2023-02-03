@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <!-- <title>Frontend Mentor | Product preview card component</title> -->
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; 
+    padding-top: 20px;
+  }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    /* colors */
+    .darkcyan { color: hsl(158, 36%, 37%)}
+    .verydarkblue { color: hsl(212, 21%, 14%)}
+    .darkgrayishblue { color: hsl(228, 12%, 48%)}
+
+    body {
+      display: grid;
+      margin-top: 100px;
+      justify-content: center;
+      align-content: center; 
+      align-content: center; 
+      background-color: hsl(30, 38%, 92%);
+    }
+
+    .popup {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      height: 550px;
+      justify-content: center;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .popup img {
+      overflow: hidden;
+      border-radius: 10px 0 0 10px;
+    }
+
+    h1 {font-size: 42px;
+      font-family:  Fraunces ;
+      font-weight: 700;}
+    
+    h4 {font-variant: small-caps;
+      font-weight: 500;
+      letter-spacing: 5px;
+      font-family: Montserrat, sans-serif}
+    
+    p {
+    font-family: "Montserrat", sans-serif;
+    line-height: 26px;
+    font-size: 18px;
+    font-weight: 500;
+    }
+
+    .price {
+      display:flex;
+      align-content: flex-end;
+    }
+
+    .newprice {
+      font-size: 32px;
+      font-weight: 700;
+      font-family: Fraunces;
+    }
+    .oldprice { text-decoration:line-through;
+      font-size: 16px;
+      height: 32px;
+      text-align: center;
+      padding: 10px;
+      font-family: Montserrat,sans-serif;
+    }
+
+    .container {
+      width: 300px;
+      height: 490px;
+      padding: 20px;
+    }
+
+    .btn {
+      font-size: 16px;
+      font-weight: 500;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      width: 220px;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: hsl(158, 36%, 37%);
+      border-radius: 7px;
+      color: white;
+    }
+    .btn:hover {
+      background-color:  hsl(167, 78%, 11%);
+    }
+
+  @media only screen and (max-width: 375px) {
+
+      body {
+        display: grid;
+        margin-top: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0;
+      }
+      h4 {
+        margin: 5px ;
+      }
+      .container {
+        padding-top: 10px;
+      width: 280px;
+      height: 450px;
+      }
+      .popup {
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      width: 100%;
+      height: 650px;
+    }
+    .popup img {
+      overflow: hidden;
+      width: auto;
+      border-radius: 10px 10px 0 0;
+    }
+    .btn {
+      width: auto;
+    }
+  }
+
+  </style>
+</head>
+<body>
+<div class="popup">
+  <img src="images/image-product-desktop.jpg" alt="image" position="absolute">
+  <div class="container">
+
+    <h4 class="darkgrayishblue">parfume</h4>
+
+    <h1 class="verydarkblue">Gabrielle Essence Eau De Parfum</h1>
+
+    <p class="darkgrayishblue">A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+    Perfumer-Creator for the House of CHANEL.</p>
+
+    <div class="price"><span class="newprice darkcyan">$149.99</span>
+    <span class="oldprice darkgrayishblue">$169.99</span></div>
+    <div class="btn"><img src="images/icon-cart.svg" alt="" type="image" sizes="20*20px"> Add to Cart</div>
+  </div>
+</div>
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="https://github.com/GoldKatrin">Kateryna Zolotko</a>.
+</div>
+</body>
+</html>
