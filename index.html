@@ -7,185 +7,139 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
-  <title>Frontend Mentor | Interactive rating component</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | NFT preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; color:hsl(213, 19%, 18%); padding-top: 20px;}
+    .attribution { font-size: 11px; text-align: center; padding-top: 15px; color: hsl(215, 51%, 70%); font-weight: 300;}
     .attribution a { color: hsl(228, 45%, 44%); }
-    *{
-      font-family: 'Overpass', sans-serif;
+    * {
+      font-family: 'Outfit', sans-serif;
     }
     body {
-      background-color: hsl(216, 12%, 8%);
+      background-color: hsl(217, 54%, 11%);
       display: grid;
-      margin-top: 120px;
       justify-content: center;
       align-content: center;
     }
-    .box {
-      background-color: hsl(213, 19%, 18%);
-      width: 340px;
-      height: 330px;
-      border-radius: 30px;
-      padding: 35px;
-    }
-    h1 {
-      color: hsl(0, 0%, 100%);
-      font-size: 24px;
-      font-weight: 700;
+    .container {
+      margin-top: 50px;
+      background-color: hsl(216, 50%, 16%);
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      padding: 15px;
     }
     p {
-      font-size: 15px;
+      font-size: 18px;
+      color: hsl(215, 51%, 70%);
       font-weight: 300;
-      color: hsl(217, 12%, 63%);
     }
-    .btn {
-      background-color: hsl(25, 97%, 53%);
+    h1 {
+      font-size: 22px;
+    }
+    h1 a {
+      font-size: 22px;
       color: white;
-      font-weight: 400;
-      font-size: 15px;
-      height: 45px;
-      width: 330px;
-      border-radius: 50px;
-      text-transform: uppercase;
-      border: none;
-      padding-top: 5px;
-      margin-top: 30px;
-      letter-spacing: 3px;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
     }
-    .btn:hover {
-      background-color: white;
-      color: hsl(25, 97%, 53%);
+    h1 a:hover {
+      color: hsl(178, 100%, 50%);
+    }
+    .box .overlay {
+      background-color: rgba(16, 196, 196, 0.706);
+      position: absolute;
+      opacity: 0;
+      border-radius: 10px;
+      height: 300px;
+      width: 300px;
+    }
+    .box > img  {
+      border-radius: 10px;
+      background: hsl(178, 100%, 50%);
+      height: 300px;
+      width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+    .box .overlay:after {
+    content: url("images/icon-view.svg");
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .box .overlay:hover  {
+      opacity: 0.7;
       cursor: pointer;
     }
-    .round {
-      background-color: rgba(124, 135, 152, 0.2);
-      height: 40px;
-      width: 40px;
-      border-radius: 30px;
+    .author {
+      border-top: 1px solid hsl(215, 51%, 70%);
+      padding-top: 15px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      margin-bottom: 10px;
     }
-    form{
-      display: flex;
-      padding-left: 0px;
-      padding-top: 10px;
-      width: 330px;
-      justify-content: space-between;
-      color: hsl(217, 12%, 63%);
-    }
-    label {
-      background-color: rgba(124, 135, 152, 0.2);
-      height: 45px;
-      width: 45px;
-      border-radius: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-    label:hover {
+    .author a {
+      font-weight: 300;
       color: white;
-      background-color: hsl(25, 97%, 53%);;
+      text-decoration: none;
+      padding-left: 5px;
     }
-    label:after {
-      background-color: white;
-      border: 6px hsl(25, 97%, 53%);
+    .author a:hover {
+      color: hsl(178, 100%, 50%);
     }
-    input{
-    background-color: rgba(124, 135, 152, 0.2);
-    cursor: pointer;
-    appearance: auto;
-    box-sizing: border-box;
-    border: 10px;
-    width: 0px;
-    height: 0px;
-    margin: 0px;
-    }
-    input:checked {
-      background-color: red;
-      border: 6px hsl(25, 97%, 53%);
-    }
-    .choice{
-      display: flex;
-      background-color: rgba(124, 135, 152, 0.2);
-      width: 200px;
-      height: 30px;
+    .author img {
+      margin-right: 10px;
+      height: 25px;
       border-radius: 20px;
-      align-items: center;
-      justify-content: center;
-      color: hsl(25, 97%, 53%);
-      margin-top: 30px;
+      border: 1px solid white;
     }
-    .thankbox {
-      display: grid;
-      align-items: center;
-      justify-items: center;
-      text-align: center;
-      padding-top: 50px;
+    .other {
+      display: flex;
+      justify-content: space-between;
     }
+    .other img {
+      margin-right: 5px;
+    }
+    .price {
+      color: hsl(178, 100%, 50%);
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+    }
+    .days {
+      display: flex;
+      align-items: center;
+      color: hsl(215, 51%, 70%);
+      font-weight: 300;
+    }
+    
   </style>
 </head>
 <body>
-
-  <!-- Rating state start -->
-  <div class="box">
-    <div class="round">
-      <img src="images/icon-star.svg" alt="">
-      </img>
+  <div class="container">
+    <div class="box">
+      <div class="overlay"></div>
+      <img src="images/image-equilibrium.jpg" alt="" height="300px">
     </div>
-    <h1 style="padding-top: 15px;">How did we do?</h1>
+    <h1><a href="#">Equilibrium #3429</a></h1>
 
-    <p>Please let us know how we did with your support request. All feedback is appreciated 
-    to help us improve our offering!</p>
+    <p>Our Equilibrium collection promotes balance and calm.</p>
 
-    <form>
-      <label for="1">
-        <input id="1" type="radio" name="question" >1
-      </label>
-    
-      <input id="2" type="radio" name="question" >
-      <label for="2">2</label>
-
-      <input id="23" type="radio" name="question">
-      <label for="3">3</label>
-
-      <input id="4" type="radio" name="question">
-      <label for="4">4</label>
-
-      <input id="5" type="radio" name="question">
-      <label for="5">5</label>
-    </form>
-
-    <button class="btn">Submit</button>
-  </div>
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-<script type="javascript">
-  for (.btn:click) {
-    return (#thnk)
-  }
-</script>
-  <div class="box thankbox" id="thnk">
-    <img src="images/illustration-thank-you.svg" alt="" width="140px"  >
-    </img>
-  <p class="choice">You selected  out of 5</p>
-
-  <h1>Thank you!</h1>
-
-  <p>We appreciate you taking the time to give a rating. If you ever need more support, 
-  don`t hesitate to get in touch!</p>
+    <div class="other">
+      <div class="price" flood-color="178, 100%, 50%"><img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</div>
+      <div class="days"><img src="images/icon-clock.svg" alt="">3 days left</div>
+    </div>  
+    <p class="author"><img src="images/image-avatar.png" alt="" >Creation of <a href="#"> Jules Wyvern</a></p>
   </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/GoldKatrin">Kateryna Zolotko</a>.
+    Coded by <a href="#">Kateryna Zolotko</a>.
   </div>
 </body>
 </html>
